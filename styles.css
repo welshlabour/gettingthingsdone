@@ -57,15 +57,21 @@ topbox > h1 {
   margin: 0;
   box-sizing: border-box;
   width: 100%;
+  /* Increase font size on desktop so it spans nearly the full width */
+  font-size: clamp(2.5rem, 8vw, 6rem);
 }
 
-/* Media query: on mobile, force each word to stack */
+/* Media query for mobile adjustments */
 @media (max-width: 768px) {
+  topbox > h1 {
+    /* Adjust font size on mobile */
+    font-size: clamp(2rem, 10vw, 4rem);
+  }
   topbox > h1 span {
     display: block;
   }
   
-  /* Existing responsive adjustment for columns */
+  /* Stack columns on mobile */
   .left, .right {
     width: 100%;
   }
