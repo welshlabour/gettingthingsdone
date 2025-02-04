@@ -88,9 +88,14 @@ topbox > h1 {
     display: block;
   }
   
-  /* Stack columns on mobile */
+  /* Stack all columns on mobile */
   .left, .right {
     width: 100%;
+  }
+  
+  /* For topbox only, reverse the order so that the right column comes first */
+  topbox .row {
+    flex-direction: column-reverse;
   }
   
   /* Override colored box right column padding on mobile so images span full width */
