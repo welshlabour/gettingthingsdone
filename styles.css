@@ -1,0 +1,93 @@
+/* Global styles */
+body {
+  margin: 0;
+  /* Default body font will use the paragraph font */
+  font-family: "massilia", sans-serif;
+  line-height: 1.6;
+}
+
+/* Headings using Dunbar Tall Ultra */
+h1 {
+  margin-top: 0;
+  font-family: "dunbar-tall", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Paragraphs using Massilia Extra Light */
+p {
+  margin-bottom: 1em;
+  font-family: "massilia", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+/* Flex container for two-column layout */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.left, .right {
+  padding: 20px;
+  box-sizing: border-box;
+}
+.left {
+  width: 60%;
+  text-align: left;
+}
+.right {
+  width: 40%;
+}
+.right img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Topbox styling (replacing header) */
+topbox {
+  display: block; /* Custom element acts as a block-level element */
+  background-color: #f5f5f5;
+  text-align: left;
+  margin: 0;
+}
+
+/* Box styles */
+.box {
+  width: 100%;
+  margin: 0;
+  text-align: left;
+}
+.box1 {
+  background-color: #136d82;
+  color: #fff;
+}
+.box2 {
+  background-color: #459443;
+  color: #fff;
+}
+.box3 {
+  background-color: #f07725;
+  color: #fff;
+}
+.box4 {
+  background-color: #ef5d98;
+  color: #fff;
+}
+
+/* Footbox styling (replacing footer) */
+footbox {
+  display: block; /* Custom element acts as a block-level element */
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 20px;
+  margin: 0;
+}
+
+/* Responsive styling: stack columns on smaller screens */
+@media (max-width: 768px) {
+  .left, .right {
+    width: 100%;
+  }
+}
