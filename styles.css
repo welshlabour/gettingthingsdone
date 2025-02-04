@@ -44,7 +44,7 @@ p {
   width: 40%;
 }
 
-/* Override widths for the topbox only (50/50 split) */
+/* Override widths for the topbox only (50/50 split on desktop) */
 topbox .left,
 topbox .right {
   width: 50%;
@@ -76,20 +76,24 @@ topbox > h1 {
   font-size: clamp(2.5rem, 8vw, 6rem);
 }
 
-/* Media query for mobile adjustments for topbox header and columns */
+/* Media query for mobile adjustments */
 @media (max-width: 768px) {
+  /* Adjust topbox header font size and spacing */
   topbox > h1 {
-    /* Adjust font size on mobile */
     font-size: clamp(2rem, 10vw, 4rem);
-    /* Reduce line-height so the words are closer together when stacked */
     line-height: 0.9;
   }
   topbox > h1 span {
     display: block;
   }
   
-  /* Stack all columns on mobile */
+  /* Make all columns span 100% width on mobile */
   .left, .right {
+    width: 100%;
+  }
+  /* Specifically override topbox columns to ensure they are 100% width */
+  topbox .left,
+  topbox .right {
     width: 100%;
   }
   
@@ -161,9 +165,9 @@ topbox > h1 {
 }
 
 /* 
-  Make images in coloured boxes fill the right column.
-  Set height: 100% and object-fit: cover so the image covers the container,
-  touching the top, bottom, and right-hand side.
+  Adjust the images in coloured boxes so that they fill the entire space of the column.
+  The image will stretch (with cropping as needed) to cover the container,
+  ensuring no background is visible at the sides or top.
 */
 .box .right img {
   width: 100%;
