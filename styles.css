@@ -1,22 +1,25 @@
 /* Global styles */
 body {
   margin: 0;
-  /* Default body font uses the paragraph font */
-  font-family: "massilia", sans-serif;
+  /* Default body font now uses Nimbus Sans Light */
+  font-family: "nimbus-sans", sans-serif;
   line-height: 1.6;
 }
+
 h1 {
   margin-top: 0;
-  /* Headings use Dunbar Tall Ultra */
-  font-family: "dunbar-tall", sans-serif;
-  font-weight: 900;
+  /* H1 elements now use Futura PT Extra Bold with reduced kerning */
+  font-family: "futura-pt", sans-serif;
+  font-weight: 800;
   font-style: normal;
+  letter-spacing: -0.05em;  /* Reduced kerning - adjust as needed */
 }
+
 p {
   margin-bottom: 1em;
-  /* Paragraphs use Massilia Extra Light */
-  font-family: "massilia", sans-serif;
-  font-weight: 200;
+  /* Paragraphs now use Nimbus Sans Light */
+  font-family: "nimbus-sans", sans-serif;
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -26,18 +29,22 @@ p {
   flex-wrap: wrap;
 }
 
-/* Increase padding for the columns in all boxes */
+/* Increase padding for the columns in all boxes and topbox */
 .left, .right {
   padding: 40px;
   box-sizing: border-box;
 }
+
 .left {
   width: 60%;
   text-align: left;
 }
+
 .right {
   width: 40%;
 }
+
+/* Ensure images fill the right column by default */
 .right img {
   width: 100%;
   height: auto;
@@ -63,7 +70,7 @@ topbox > h1 {
   font-size: clamp(2.5rem, 8vw, 6rem);
 }
 
-/* Media query for mobile adjustments */
+/* Media query for mobile adjustments for topbox header */
 @media (max-width: 768px) {
   topbox > h1 {
     /* Adjust font size on mobile */
@@ -81,27 +88,72 @@ topbox > h1 {
   }
 }
 
-/* Box styles */
+/* Coloured Boxes Styles */
 .box {
   width: 100%;
   margin: 0;
   text-align: left;
 }
+
+/* Increase the font size of the h1 in coloured boxes by about 50% */
+.box h1 {
+  font-size: 3.5rem;
+}
+@media (max-width: 768px) {
+  .box h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Content styling for lists inside boxes to match paragraphs */
+.box ul, .box li {
+  font-family: "nimbus-sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  margin: 0 0 1em 20px;  /* Indent list items appropriately */
+  padding: 0;
+}
+
+/* Specific box colours */
 .box1 {
   background-color: #136d82;
   color: #fff;
 }
+
 .box2 {
   background-color: #459443;
   color: #fff;
 }
+
 .box3 {
   background-color: #f07725;
   color: #fff;
 }
+
 .box4 {
   background-color: #ef5d98;
   color: #fff;
+}
+
+/* 
+  Adjust the right column within coloured boxes so that the image touches
+  the top, bottom, and right edges of the box.
+  We remove top, right, and bottom padding while keeping left padding to separate it from the text.
+*/
+.box .right {
+  padding: 0 0 0 40px;
+}
+
+/* 
+  Make images in coloured boxes fill the right column.
+  Set height: 100% and object-fit: cover so the image covers the container,
+  touching the top, bottom, and right-hand side.
+*/
+.box .right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Footbox styling (replacing footer) */
@@ -110,6 +162,26 @@ footbox {
   background-color: #333;
   color: #fff;
   text-align: center;
-  padding: 10px 20px;
+  padding: 40px 20px;  /* Increased padding for more space */
   margin: 0;
+  font-size: 14px;     /* Decreased font size */
+}
+
+/* Responsive YouTube video */
+.video-container {
+  position: relative;
+  width: 100%;
+  /* 16:9 aspect ratio */
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
