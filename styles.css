@@ -76,7 +76,7 @@ topbox > h1 {
   font-size: clamp(2.5rem, 8vw, 6rem);
 }
 
-/* Media query for mobile adjustments for topbox header */
+/* Media query for mobile adjustments for topbox header and columns */
 @media (max-width: 768px) {
   topbox > h1 {
     /* Adjust font size on mobile */
@@ -91,6 +91,11 @@ topbox > h1 {
   /* Stack columns on mobile */
   .left, .right {
     width: 100%;
+  }
+  
+  /* Override colored box right column padding on mobile so images span full width */
+  .box .right {
+    padding: 0;
   }
 }
 
